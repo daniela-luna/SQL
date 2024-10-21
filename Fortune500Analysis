@@ -97,3 +97,15 @@ ORDER BY avg_employee_tenure DESC;
 SELECT industry, SUM(employees) AS total_workforce  
 FROM fortune_companies
 HAVING MAX(employees);
+
+-- 6. What are the top 10 companies by revenue? 
+SELECT company_name, revenue
+FROM fortune_companies
+ORDER BY revenue DESC
+LIMIT 10;
+
+-- 7. What is the average number of employees in each industry? 
+
+SELECT industry, ROUND(AVG(employees)) AS avg_employees
+FROM fortune_companies 
+GROUP BY industry; 
